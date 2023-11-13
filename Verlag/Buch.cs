@@ -47,15 +47,19 @@ public class Buch
         }
         set
         {
+            if(this.auflage <= 1)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             auflage = value;
         }
     }
 
     public Buch(string autor, string titel, int auflage)
     {
-        this.Autor = autor;
-        this.Titel = titel;
-        this.Auflage = auflage;
+        this.autor = autor;
+        this.titel = titel;
+        this.auflage = auflage;
 
         if (auflage < 1)
         {
@@ -65,8 +69,8 @@ public class Buch
 
     public Buch(string autor, string titel)
     {
-        this.Autor = autor;
-        this.Titel = titel;
-        this.Auflage = 1;
+        this.autor = autor;
+        this.titel = titel;
+        this.auflage = 1;
     }
 }
