@@ -110,15 +110,31 @@ namespace VerlagTests
 		public void ISBN_KannErgaenztWerden()
 		{
 			//Arrange
-			string isbn = "978 - 3770436163";
+			string isbn = "978-3-770436-163";
+            Buch b = new Buch("autor", "titel");
 
 			//Act
-			Buch b = new Buch(isbn);
+			b.ISBN = isbn;
 
 			//Assert
-			Assert.AreEqual(isbnNeu, b.Isbn);
+			Assert.AreEqual(isbn, b.ISBN);
 		}
 
-	}
+        [TestMethod]
+        public void ISBN_PruefzifferWirdAutomatischBerechnet()
+        {
+            // Arrange
+            Buch b = new Buch("autor", "titel");
+            string isbnOhnePruefziffer = "978-3-88661-189";
+            string isbnMitPruefziffer = "978-3-88661-189-8";
+
+            // Act 
+            b.ISBN = isbnOhnePruefziffer;
+
+            // Assert
+            Assert.AreEqual(isbnMitPruefziffer, b.ISBN);
+        }
+
+    }
 
 }
