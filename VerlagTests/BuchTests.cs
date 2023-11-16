@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Verlag;
 
@@ -105,5 +106,36 @@ namespace VerlagTests
 		//	//Act
 		//	Buch b = new Buch(unerlaubtesZeichen, "titel");
 		//}
+
+		[TestMethod]
+		public void Buch_mitISBNhinzufügen()
+		{
+			//Arrange
+			string isbn = "123-4-56-789012-3";
+			string autor = "J.K. Rowling";
+			string titel = "Harry Potter";
+			int auflage = 1;
+
+			//Act
+			Buch b = new Buch(autor, titel, auflage, isbn);
+		}
+
+		[TestMethod]
+		public void Buch_ISBNvergleichen()
+		{
+			//Arrange
+			string isbn = "";
+			string pruefziffer = "";
+
+			//Act
+			for(int i = 0; i < isbn.Length; i++) 
+			{
+
+			}
+			string isbnZusammen = isbn + pruefziffer;
+
+			//Assert
+			Assert.AreEqual(isbnZusammen, isbn + pruefziffer);
+		}
 	}
 }
