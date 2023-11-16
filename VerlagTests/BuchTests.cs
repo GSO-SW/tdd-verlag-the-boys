@@ -105,5 +105,20 @@ namespace VerlagTests
 			//Act
 			Buch b = new Buch(unerlaubtesZeichen, "titel");
 		}
+
+		[TestMethod]
+		public void ISBN_KannErgaenztWerden()
+		{
+			//Arrange
+			string isbn = "978 - 3770436163";
+
+			//Act
+			Buch b = new Buch(isbn);
+
+			//Assert
+			Assert.AreEqual(isbnNeu, b.isbn);
+		}
+
 	}
+
 }
