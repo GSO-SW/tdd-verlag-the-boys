@@ -111,34 +111,32 @@ namespace VerlagTests
 		public void Buch_mitISBNhinzufügen()
 		{
 			//Arrange
-			string isbn = "123-4-56-789012-3";
+			string isbn = "978-3-88661-189-8";
 			string autor = "J.K. Rowling";
 			string titel = "Harry Potter";
 			int auflage = 1;
 
-			//Act
-			Buch b = new Buch(autor, titel, auflage, isbn);
+            Buch b = new Buch(autor, titel, auflage, isbn);
 
-			//Assert
-			Assert.AreEqual(isbn,b.ISBN);
+			//Act
+			b.ISBN = isbn;
+
+            //Assert
+            Assert.AreEqual(isbn,b.ISBN);
 		}
 
 		[TestMethod]
 		public void Buch_ISBNvergleichen()
 		{
 			//Arrange
-			string isbn = "";
-			string pruefziffer = "";
+			string isbnOhnePruefziffer = "978-3-88661-189";
+			string isbnMitPruefziffer = "978-3-88661-189-8";
 
 			//Act
-			for(int i = 0; i < isbn.Length; i++) 
-			{
-
-			}
-			string isbnZusammen = isbn + pruefziffer;
+			b.ISBN = isbnOhnePruefziffer;
 
 			//Assert
-			Assert.AreEqual(isbnZusammen, isbn + pruefziffer);
+			Assert.AreEqual(isbnOhnePruefziffer,b.ISBN);
 		}
 	}
 }
