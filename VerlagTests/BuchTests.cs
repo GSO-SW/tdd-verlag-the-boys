@@ -118,6 +118,9 @@ namespace VerlagTests
 
 			//Act
 			Buch b = new Buch(autor, titel, auflage, isbn);
+
+			//Assert
+			Assert.AreEqual(isbn,b.ISBN);
 		}
 
 		[TestMethod]
