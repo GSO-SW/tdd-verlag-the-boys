@@ -55,6 +55,21 @@ public class Buch
         }
     }
 
+    private string isbn;
+
+    public string ISBN
+    {
+        get
+        {
+            return isbn;
+        }
+
+        set
+        {
+            isbn = value;
+        }
+    }
+
     public Buch(string autor, string titel, int auflage)
     {
         this.autor = autor;
@@ -72,5 +87,12 @@ public class Buch
         this.autor = autor;
         this.titel = titel;
         this.auflage = 1;
+    }
+
+    public Buch(string autor, string titel, int auflage, string isbn)
+    {
+        this.autor = autor;
+        this.titel = titel;
+        this.auflage = auflage;
     }
 }

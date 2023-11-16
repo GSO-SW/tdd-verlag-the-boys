@@ -129,6 +129,7 @@ namespace VerlagTests
 		public void Buch_ISBNvergleichen()
 		{
 			//Arrange
+			Buch b = new Buch("autor", "titel");
 			string isbnOhnePruefziffer = "978-3-88661-189";
 			string isbnMitPruefziffer = "978-3-88661-189-8";
 
