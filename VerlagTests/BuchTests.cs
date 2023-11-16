@@ -116,7 +116,7 @@ namespace VerlagTests
 			Buch b = new Buch(isbn);
 
 			//Assert
-			Assert.AreEqual(isbnNeu, b.isbn);
+			Assert.AreEqual(isbnNeu, b.Isbn);
 		}
 
 	}
