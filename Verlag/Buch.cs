@@ -70,6 +70,8 @@ public class Buch
         }
     }
 
+    public List<char> List_char = new List<char>();
+
     public Buch(string autor, string titel, int auflage)
     {
         this.autor = autor;
