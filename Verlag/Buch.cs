@@ -10,7 +10,8 @@ namespace Verlag
     {
         private string autor;
         private string titel;
-        private int auflage;
+        private int auflage = 1;
+        private string isbn;
 
         public string Autor
         {
@@ -27,7 +28,24 @@ namespace Verlag
         public int Auflage
         { 
             get { return auflage; }
-            set { auflage = value; }
+            set {  
+                
+                if (auflage < 1)
+                {
+                    throw new ArgumentOutOfRangeException();
+                } else if (auflage > 1)
+                {
+                    auflage = value;
+                }
+                }
+        }
+        public string ISBN
+        {
+            get { return isbn; }
+            set { isbn = value; 
+                
+                
+            }
         }
 
         public Buch(string autor, string titel, int auflage = 1)
@@ -35,6 +53,10 @@ namespace Verlag
             this.autor = autor;
             this.titel = titel;
             this.auflage = auflage;
+            if(auflage < 1)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
         public Buch(string autor, string titel)
         {
@@ -42,5 +64,15 @@ namespace Verlag
             this.titel = titel;
         }
 
-    }
+
+
+
+        for (int i = 0; i <= string.length; i++)
+			{
+				if (string[i] = "-")
+				{
+                    
+				}
+			}
+
 }
